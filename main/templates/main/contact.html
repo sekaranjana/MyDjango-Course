@@ -1,0 +1,36 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="jumbotron">
+<div class="container">
+<div class="row">
+    <div class="col-sm-4">
+    	<div class="card" >
+        <div class="card-body">
+        <h5 class="card-title">Contact Me:</h5>
+        <p><a href="https://github.com/sekaranjana" class="btn btn-secondary">Github</a></p>
+        <p><a href="https://www.linkedin.com/in/anjana-s-7656541b5/" class="btn btn-secondary">Linked In</a></p>
+        <p>Phone Number: 9087240237</p>
+        <p>Email id: sekaranjana25@gmail.com</p>
+    </div>
+</div>
+    </div>
+    <div class="col-sm-6">
+    	<div class="card">
+        <div class="card-body">
+        <h5 class="card-title"></h5>
+
+        {% load crispy_forms_tags %}
+        <form method="post" action="/contact/">
+        	{% csrf_token %}
+        	{{form|crispy}}
+        	<br>
+        	<button type="submit" class="btn btn-secondary">submit</button>
+        </form>	
+    </div>
+    </div>
+  </div>
+</div>
+<br>
+{% endblock%}
